@@ -12,7 +12,7 @@ function shuffle(array) {
 
 export default function createDeck() {
     let id = 0
-    const cards = ['gameboy', 'finny', 'ice-king', 'jake', 'mongrol', 'princess'].reduce((acc, type) => {
+    const cards = ['gameboy', 'finn', 'ice-king', 'jake', 'mongrol', 'princess'].reduce((acc, type) => {
         acc.push({
             id: id++,
             type

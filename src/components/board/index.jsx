@@ -19,8 +19,6 @@ export default function Board({
                     <Card
                         id={card.id}
                         type={card.type}
-                        back={'/img/back.svg'}
-                        front={'/img/characters/princess.png'}
                         flipped={flipped.includes(card.id)}
                         solved={solved.includes(card.id)}
                         handleClick={handleClick}

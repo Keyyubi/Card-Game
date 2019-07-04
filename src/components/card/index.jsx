@@ -13,14 +13,13 @@ export default function Card({
 }) {
     return (
         <div
-            className="card"
-            className={`flip-container card ${flipped ? 'flipped' : ''}`}
+            className={`flip-container card ${flipped || solved ? 'flipped' : ''}`}
             onClick={() => disabled ? null : handleClick(id)}
         >
             <div className="flipper">
                 <img 
                     alt=""
-                    className={flipped ? 'front' : 'back'}
+                    className={flipped || solved ? 'front' : 'back'}
                     src={flipped || solved ? `/img/characters/${type}.png` : '/img/back.svg'}
                 />
             </div>

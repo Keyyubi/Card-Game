@@ -13,24 +13,35 @@ function App() {
     setCards(createDeck())
   }, [])
 
-  const sameCardClicked = (id) => flipped.includes(id)
+  const sameCardClicked = (id) => {return flipped.includes(id)}
+  
   const isMatch = (id) => {
     const clickedCard = cards.find(card => card.id === id)
     const flippedCard = cards.find(card => flipped[0] === card.id)
     return flippedCard.type === clickedCard.type
   }
+  
   const resetCards = () => {
     setFlipped([])
     setDisabled(false)
   }
+
   const handleClick = (id) => {
     setDisabled(true)
     if (flipped.length === 0) {
       setFlipped([id])
       setDisabled(false)
     } else {
-      if (sameCardClicked(id))
+      if (sameCardClicked(id)) {
+        resetCards()
         return
+      }
+
+      if (flipped.length == 2) {
+        console.log('ok')
+        resetCards()
+        return
+      }
       setFlipped([flipped[0], id])
 
       if (isMatch(id)) {
