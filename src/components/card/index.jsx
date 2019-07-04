@@ -32,8 +32,6 @@ Card.propTypes = {
     id: PropTypes.number.isRequired,
     flipped: PropTypes.bool.isRequired,
     solved: PropTypes.bool.isRequired,
-    back: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
-    width: PropTypes.number.isRequired,
     disabled: PropTypes.bool.isRequired,
 }

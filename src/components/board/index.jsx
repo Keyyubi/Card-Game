@@ -30,7 +30,7 @@ export default function Board({
     )
 }
 
-Card.propTypes = {
+Board.propTypes = {
     disabled: PropTypes.bool.isRequired,
     cards: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
     flipped: PropTypes.arrayOf(PropTypes.number).isRequired,

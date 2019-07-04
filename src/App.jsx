@@ -37,18 +37,13 @@ function App() {
         return
       }
 
-      if (flipped.length == 2) {
-        console.log('ok')
-        resetCards()
-        return
-      }
       setFlipped([flipped[0], id])
 
       if (isMatch(id)) {
         setSolved([...solved, flipped[0], id])
         resetCards()
       } else {
-        setTimeout(resetCards, 1500)
+        setTimeout(resetCards, 1000)
       }
     }
   }
