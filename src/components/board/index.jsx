@@ -82,9 +82,8 @@ export default function Board() {
         }
         
         dispatch(updateBestScore({ id: currUser.id, score: point }))
-        // alert('Game Over')
-        setTimeout(dispatch(changePage(2)),500)
-        return
+        alert('Game Over')
+        dispatch(changePage(2))
     }
 
     return (
