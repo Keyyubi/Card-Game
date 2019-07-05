@@ -22,3 +22,12 @@ export const updateBestScore = (newUser) => ({
         bestScore: newUser.score
     }
 })
+
+export const setCurrentUser = (user) => ({
+    type: 'SET_CURR_USER',
+    payload: user
+})
+
+export const increaseSolved = () => ({
+    type: 'INCREASE_SOLVED',
+})

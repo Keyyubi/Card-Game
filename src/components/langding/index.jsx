@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react'
-// import PropTypes from 'prop-types'
+import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { changePage, addUser } from '../../actions/index'
+import { changePage, addUser, setCurrentUser } from '../../actions/index'
 
 import './style.css'
 
@@ -12,6 +11,8 @@ export default function Landing() {
     const [user, setUser] = useState(0)
 
     const startGame = () => {
+        let currUsr = users.find(e => { return e.id === Number(user) })
+        dispatch(setCurrentUser(currUsr))
         dispatch(changePage(1))
     }
 
