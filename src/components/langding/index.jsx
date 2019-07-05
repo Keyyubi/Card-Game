@@ -19,10 +19,10 @@ export default function Landing() {
     return (
         <div className="container-fluid mt-4">
             <div className="row">
-                <div className="form-group">
+                <div className="form-group col-12">
                     <label htmlFor="newUser">Yeni Kullanıcı Ekle</label>
                     <div className="d-flex">
-                        <div className="col-8">
+                        <div className="col-8 pl-0">
                             <input
                                 ref={e => newUser = e}
                                 id="newUser"
