@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux'
 
 import Board from './components/board'
+import Landing from './components/langding'
 import createDeck from './deck'
 
 function App() {
@@ -8,25 +10,26 @@ function App() {
   const [flipped, setFlipped] = useState([])
   const [solved, setSolved] = useState([])
   const [disabled, setDisabled] = useState(false)
+  let pageState = useSelector(state => state.page)
 
   useEffect(() => {
     setCards(createDeck())
   }, [])
 
-  const sameCardClicked = (id) => {return flipped.includes(id)}
-  
+  const sameCardClicked = (id) => { return flipped.includes(id) }
+
   const isMatch = (id) => {
     const clickedCard = cards.find(card => card.id === id)
     const flippedCard = cards.find(card => flipped[0] === card.id)
     return flippedCard.type === clickedCard.type
   }
-  
+
   const resetCards = () => {
     setFlipped([])
     setDisabled(false)
   }
 
-  const handleClick = (id) => {
+  const flipCard = (id) => {
     setDisabled(true)
     if (flipped.length === 0) {
       setFlipped([id])
@@ -48,17 +51,28 @@ function App() {
     }
   }
 
-  return (
-    <div className="container-fluid mt-4">
-      <Board
-        cards={cards}
-        flipped={flipped}
-        handleClick={handleClick}
-        solved={solved}
-        disabled={disabled}
-      />
-    </div>
-  );
+  if (pageState === 0)
+    return (
+      <Landing />
+    );
+  else if (pageState === 1)
+    return (
+      <div className="container-fluid mt-4">
+        <Board
+          cards={cards}
+          flipped={flipped}
+          handleClick={flipCard}
+          solved={solved}
+          disabled={disabled}
+        />
+      </div>
+    );
+  else
+    return (
+      <div>
+        Result
+      </div>
+    );
 }
 
 export default App;
