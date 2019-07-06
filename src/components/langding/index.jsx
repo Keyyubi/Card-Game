@@ -17,7 +17,7 @@ export default function Landing() {
     }
 
     return (
-        <div className="container-fluid mt-4">
+        <div className="container-fluid mt-4 main">
             <div className="row">
                 <div className="form-group col-12">
                     <label htmlFor="newUser">Yeni Kullanıcı Ekle</label>

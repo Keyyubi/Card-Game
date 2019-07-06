@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { changePage } from '../../actions/index'
+import { changePage,resetSolved } from '../../actions/index'
 
 import './style.css'
 
@@ -10,10 +10,11 @@ export default function Result() {
     const user = users.find(e => e.id === currUser.id)
     const dispatch = useDispatch()
     const homePage = () => {
+        dispatch(resetSolved())
         dispatch(changePage(0))
     }
     return (
-        <div className="container-fluid mt-4">
+        <div className="container-fluid mt-4 main">
             <div className="row d-flex justify-content-center mb-2">
                 <h4>
                     {user.username}

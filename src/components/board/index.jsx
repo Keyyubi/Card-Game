@@ -87,7 +87,7 @@ export default function Board() {
     }
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid mt-4 main">
             <div className="row">
                 {cards.map((card) => (
                     <div className="col-4 mb-2"

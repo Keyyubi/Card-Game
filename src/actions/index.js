@@ -31,3 +31,7 @@ export const setCurrentUser = (user) => ({
 export const increaseSolved = () => ({
     type: 'INCREASE_SOLVED',
 })
+
+export const resetSolved = () => ({
+    type: 'RESET_SOLVED',
+})
